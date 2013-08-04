@@ -13,13 +13,17 @@ int main(int argn, char ** argv) {
   struct utsname unameData;
   uname(&unameData);
   char strn[1024];
-  sprintf(strn, "[%s:%s:%s:%s:%s]%s", unameData.sysname, unameData.nodename, 
-                                    unameData.release, unameData.version, unameData.machine, "<br/>");
+  sprintf(strn, "%s%s%s%s%s%s%s%s%s", 
+            unameData.sysname, ":<br/>:",
+            unameData.nodename, ":<br/>:",
+            unameData.release, ":<br/>:",
+            unameData.version, ":<br/>:",
+            unameData.machine);
   while ( FCGI_Accept () >= 0 ) {
     printf( "Content-Type: text/html\r\n" );
     printf ("Status: 200 OK\r\n\r\n");
 //    printf( "Hello world in C\r\n" );
-    FILE * inxfl = fopen ( "/home/junis/www/index.html", "r");
+    FILE * inxfl = fopen ( "./index.html", "r");
     char * ln;
     char * rpln;
     char * rrpln;

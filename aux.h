@@ -5,7 +5,7 @@ int
 arplstr 
 ( const char * str, char ** dst, const char * find, const char * repl);
 
-char * freadln (FILE * restrict file);
+// char * freadln (FILE * restrict file);
 
 size_t 
 strftime_millis

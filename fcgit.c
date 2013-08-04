@@ -7,6 +7,8 @@
 
 #include "aux.h"
 
+char * freadln (FILE *  file);
+
 int main(int argn, char ** argv) {  
   struct utsname unameData;
   uname(&unameData);
